@@ -1,9 +1,11 @@
 import React from 'react'
 
-const ButtonCard = () => {
+const ButtonCard = ({product, addToCart}) => {
+
+  const {id} = product
   return (
     <>
-        <button className='btnBuy'>COMPRAR</button>
+        <button onClick={() => addToCart(id)} className='btnBuy'>COMPRAR</button>
 
         <style jsx>{`
             .btnBuy {
