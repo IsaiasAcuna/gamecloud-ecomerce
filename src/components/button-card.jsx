@@ -5,7 +5,7 @@ const ButtonCard = ({product, addToCart}) => {
   const {id} = product
   return (
     <>
-        <button onClick={() => addToCart(id)} className='btnBuy'>COMPRAR</button>
+        <button onClick={() => addToCart(product, id)}  className='btnBuy'>COMPRAR</button>
 
         <style jsx>{`
             .btnBuy {
@@ -23,5 +23,8 @@ const ButtonCard = ({product, addToCart}) => {
     </>
   )
 }
+
+// onClick={() => addToCart(id)}
+// onClick={() => agregarAlCarrito(product, id)}
 
 export default ButtonCard

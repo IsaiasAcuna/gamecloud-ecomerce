@@ -21,6 +21,7 @@
 }
 
 .titleCard, .priceCard {
+
     font-size: 25px;
     white-space: nowrap;
     overflow: hidden;
@@ -30,6 +31,7 @@
 }
 
 .priceCard {
+
     margin: 15px 0;
     color: red;
 }

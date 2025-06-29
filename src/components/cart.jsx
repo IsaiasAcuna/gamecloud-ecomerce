@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
 import CardItems from './cartItems';
 
-const Carrito = ( {cart , clearCart, addToCart, deleteFromCart}) => {
+const Carrito = ( {cart , addToCart, borrarDelCart, vaciarCart}) => {
   
   const [abierto, setAbierto] = useState(false);
 
   const toggleCarrito = () => setAbierto(prev => !prev);
 
-  const total = cart.reduce((suma, item, quantity) => suma + item.price * item.quantity, 0)
+  const priceTotal = cart.reduce((suma, item) => suma + item.price * item.quantity, 0)
 
 
+  console.log(vaciarCart);
   
 
 
@@ -32,7 +33,7 @@ const Carrito = ( {cart , clearCart, addToCart, deleteFromCart}) => {
     top: '20px',
     right: '20px',
     padding: '10px 20px',
-    backgroundColor: '#333',
+    backgroundColor: '#956',
     color: 'white',
     border: 'none',
     cursor: 'pointer',
@@ -63,15 +64,21 @@ const Carrito = ( {cart , clearCart, addToCart, deleteFromCart}) => {
         <h2>Tu Carrito</h2>
         
 
-        {cart.map(item => ( <CardItems item={item} addToCart={addToCart} deleteFromCart={deleteFromCart} />))}
+        {cart.map(item => ( <CardItems item={item} addToCart={addToCart} borrarDelCart={borrarDelCart} />))}
 
-        <p>total: $ {total} </p>
+        <h3>TOTAL: ${(priceTotal).toLocaleString('es-AR', {
+                                minimumFractionDigits: 2,
+                                maximumFractionDigits: 2
+                            })} 
+        </h3>
 
-        <button onClick={clearCart}>Limpiar Carrito</button>
+        <button onClick={() => vaciarCart()}>Limpiar Carrito</button>
 
       </div>
     </>
   );
 };
+
+// 
 
 export default Carrito;
