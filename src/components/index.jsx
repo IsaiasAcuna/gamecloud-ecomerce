@@ -125,6 +125,8 @@ const Index = () => {
 
             <Carrito cart={cart} addToCart={addToCart} borrarDelCart={borrarDelCart} vaciarCart={vaciarCart}/>
 
+            
+
         </>
     );
 };

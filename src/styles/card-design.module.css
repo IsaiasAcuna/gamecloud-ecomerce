@@ -32,12 +32,13 @@
 
 .priceCard {
 
-    margin: 15px 0;
+    margin: 10px 0;
     color: red;
 }
 
 .categoryCard {
     color: #909090;
+    font-weight: 400;
 }
 
 

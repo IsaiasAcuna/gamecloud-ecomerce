@@ -11,7 +11,6 @@ export function cartReducer(state, action) {
             }
         }
     }}
- 
 
 
 
