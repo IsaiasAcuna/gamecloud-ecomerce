@@ -1,9 +1,9 @@
 import Head from "next/head";
-import Card from '../components/card'
-import Main from '../components/main'
 import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+import Main from '../components/main'
 import Contacts from "@/components/Contacts";
+import Footer from "@/components/Footer";
+
 export default function Home() {
   return (
     <>
@@ -18,6 +18,7 @@ export default function Home() {
       <Main />
       <Contacts />
       <Footer />
+
     </>
   );
 }

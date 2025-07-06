@@ -1,0 +1,84 @@
+{
+  "products": [
+    {
+      "id": "0",
+      "title": "Call of Duty MWII",
+      "category": "Shooter",
+      "price": 49999,
+      "imagen_url": "https://raw.githubusercontent.com/IsaiasAcuna/imagenes-app/master/images/call_of_duty_modern_warframe_2_xbox_series.jpg"
+    },
+    {
+      "id": "1",
+      "title": "Halo Infinite",
+      "category": "Shooter",
+      "price": 69999,
+      "imagen_url": "https://raw.githubusercontent.com/IsaiasAcuna/imagenes-app/master/images/halo-infinite-xbox-series.jpg"
+    },
+    {
+      "id": "2",
+      "title": "Forza Horizon 5",
+      "category": "Carreras",
+      "price": 55999,
+      "imagen_url": "https://raw.githubusercontent.com/IsaiasAcuna/imagenes-app/master/images/forza-horizon-5-xbox-series.jpg"
+    },
+    {
+      "id": "3",
+      "title": "Spider-Man: Miles Morales",
+      "category": "Accion y Aventura, Mundo Abierto",
+      "price": 79999,
+      "imagen_url": "https://raw.githubusercontent.com/IsaiasAcuna/imagenes-app/master/images/spiderman-miles-morales_ps5.jpg"
+    },
+    {
+      "id": "4",
+      "title": "God of War Ragnarok",
+      "category": "Accion y Aventura",
+      "price": 85999,
+      "imagen_url": "https://raw.githubusercontent.com/IsaiasAcuna/imagenes-app/master/images/god-of-war-ragnarok-ps5.png"
+    },
+    {
+      "id": "5",
+      "title": "Demons Souls",
+      "category": "RPG de Accion",
+      "price": 57599,
+      "imagen_url": "https://raw.githubusercontent.com/IsaiasAcuna/imagenes-app/master/images/demons-souls-ps5.jpg"
+    },
+    {
+      "id": "6",
+      "title": "Ratchet & Clank",
+      "category": "Plataformas 3D",
+      "price": 27999,
+      "imagen_url": "https://raw.githubusercontent.com/IsaiasAcuna/imagenes-app/master/images/ratchet_clank_una_dimension_aparte_ps5.jpg"
+    },
+    {
+      "id": "7",
+      "title": "Pokemon Escarlata",
+      "category": "RPG, Aventura",
+      "price": 112999,
+      "imagen_url": "https://raw.githubusercontent.com/IsaiasAcuna/imagenes-app/master/images/pokemon-escarlata_nintendo_switch.jpg"
+    },
+    {
+      "id": "8",
+      "title": "The Legend of Zelda BOTW",
+      "category": "Accion y Aventura, Mundo Abierto",
+      "price": 101999,
+      "imagen_url": "https://raw.githubusercontent.com/IsaiasAcuna/imagenes-app/master/images/the_legend_of_zelda_breath_of_the_wild_nintendo_switch.webp"
+    },
+    {
+      "id": "9",
+      "title": "Super Mario 3D World",
+      "category": "Plataformas 3D",
+      "price": 94999,
+      "imagen_url": "https://raw.githubusercontent.com/IsaiasAcuna/imagenes-app/master/images/super-mario-3d-world-nintendo-switch.jpeg"
+    }
+  ],
+  "cart": [
+    {
+      "id": "8",
+      "title": "The Legend of Zelda BOTW",
+      "category": "Accion y Aventura, Mundo Abierto",
+      "price": 101999,
+      "imagen_url": "https://raw.githubusercontent.com/IsaiasAcuna/imagenes-app/master/images/the_legend_of_zelda_breath_of_the_wild_nintendo_switch.webp",
+      "quantity": 1
+    }
+  ]
+}
