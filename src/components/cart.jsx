@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState, useEffect } from 'react';
 import CardItems from './cartItems';
 
 const Carrito = ( {cart , addToCart, borrarDelCart, vaciarCart}) => {
@@ -7,11 +7,13 @@ const Carrito = ( {cart , addToCart, borrarDelCart, vaciarCart}) => {
 
   const toggleCarrito = () => setAbierto(prev => !prev);
 
-  const priceTotal = cart.reduce((suma, item) => suma + item.price * item.quantity, 0)
+  const priceTotal = cart.reduce((suma, item) => suma + item.price * item.quantity, 0)  
 
-
-  console.log(vaciarCart);
-  
+  useEffect(() => {
+  if (cart.length > 0) {
+    setAbierto(true);
+  }
+}, [cart]);
 
 
   const panelStyle = {

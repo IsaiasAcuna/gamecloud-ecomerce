@@ -1,6 +1,6 @@
 
 import { cartInitialState } from "@/reducer/cartInitialState";
-import { useReducer, useEffect } from "react";
+import { useReducer, useEffect} from "react";
 import { cartReducer } from "@/reducer/cartReducer";
 import { TYPES } from "@/reducer/cartActions";
 import Carrito from "./cart";
@@ -11,18 +11,17 @@ import axios from "axios";
 const Index = () => {
 
     const [state, dispatch] = useReducer(cartReducer, cartInitialState)
-    
+
     const {products, cart} = state;
-    
-    
+
     // levantar el server en otra terminal: npm run server
 
     const readState = async () => {
 
-      const resProducts = await axios.get("http://localhost:5000/products"),
+        const resProducts = await axios.get("http://localhost:5000/products"),
             resCart = await axios.get("http://localhost:5000/cart")
 
-      const productsData = await resProducts.data,
+        const productsData = await resProducts.data,
             cartData = await resCart.data
 
             dispatch({type: TYPES.READ_STATE, payload: {
@@ -34,11 +33,9 @@ const Index = () => {
         useEffect(() => {
             readState()
         }, [])
-        
 
         // esta funcion van al boton de "COMPRAR" y el incrementador de los cartItems dentro del cart
-        
-        
+
         const addToCart = async (product, id) => {
             
             axios.get(`http://localhost:5000/cart/${id}`)
@@ -71,39 +68,29 @@ const Index = () => {
         }
         
 
-        
         const borrarDelCart = async (id) => {
             
             await axios.get(`http://localhost:5000/cart/${id}`)
-            .then(res => {
-                
-                if (res.data.quantity > 1) {
-                    
-                    const newQuantity = res.data.quantity - 1;
-                    
+            .then(res => {                
+                if (res.data.quantity > 1) {                    
+                    const newQuantity = res.data.quantity - 1;                    
                     axios.patch(`http://localhost:5000/cart/${id}`, {
                         quantity: newQuantity
                     });
-                    readState()
-                    
+                    readState()                    
                 }else{
                     axios.delete(`http://localhost:5000/cart/${id}`)
                     readState()
-                }
-                
+                }                
             })
             ;
             
         }
 
         //delete .map al cart multiple
-
-        
         const vaciarCart = async () => {
-            await axios.get(`http://localhost:5000/cart`)
-            
-            .then(res => {
-            
+            await axios.get(`http://localhost:5000/cart`)         
+            .then(res => {   
             res.data.map((item => 
                 axios.delete(`http://localhost:5000/cart/${item.id}`)
             ))
@@ -111,22 +98,16 @@ const Index = () => {
         })
 
         readState()
-
     }
 
 
     return (
         <>
-
             <h3>Productos</h3>
 
             {products.map(product => <Card key={product.id} product={product} addToCart={addToCart} />)}
 
-
             <Carrito cart={cart} addToCart={addToCart} borrarDelCart={borrarDelCart} vaciarCart={vaciarCart}/>
-
-            
-
         </>
     );
 };

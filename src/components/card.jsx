@@ -1,21 +1,27 @@
-import ButtonCard from './button-card'
+import Button from './button'
 import styles from '../styles/card-design.module.css'
 import Image from 'next/image'
+import { useState } from 'react'
+import ModalProduct from './modal-product'
 
 
-const Card = ({product, agregarAlCarrito, addToCart}) => {
+const Card = ({product, addToCart}) => {
 
-  const {title, category, price, imagen_url} = product
+    const {title, category, price, imagen_url} = product
 
-  return (
+    const [visible, setVisible] = useState(false)
+
+    const toggleModal = () => setVisible(prev => !prev);
+
+    return (
     <>
         <article className={styles.article}>
             <figure className={styles.imagen}>
                 <Image src={imagen_url} alt="" 
-                  layout="intrinsic"
-                  width={150}
-                  height={300}/>
-                  
+                    layout="intrinsic"
+                    width={150}
+                    height={300}/>
+
             </figure>
             <div className={styles.dataProduct}>
                 <h3 className={styles.titleCard}>{title}</h3>
@@ -24,13 +30,16 @@ const Card = ({product, agregarAlCarrito, addToCart}) => {
                                 minimumFractionDigits: 2,
                                 maximumFractionDigits: 2
                             })}</h6>
-                <ButtonCard product={product} agregarAlCarrito={agregarAlCarrito} addToCart={addToCart} />
+
+                <Button onClick={() => toggleModal()} texto={"COMPRAR"} />
+
+                {visible && <ModalProduct product={product} addToCart={addToCart} toggleModal={toggleModal} />}
+
             </div>
         </article>
     </>
-      
-    
-  )
+
+    )
 }
 
 export default Card

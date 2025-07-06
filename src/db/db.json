@@ -71,5 +71,14 @@
       "imagen_url": "https://raw.githubusercontent.com/IsaiasAcuna/imagenes-app/master/images/super-mario-3d-world-nintendo-switch.jpeg"
     }
   ],
-  "cart": []
+  "cart": [
+    {
+      "id": "8",
+      "title": "The Legend of Zelda BOTW",
+      "category": "Accion y Aventura, Mundo Abierto",
+      "price": 101999,
+      "imagen_url": "https://raw.githubusercontent.com/IsaiasAcuna/imagenes-app/master/images/the_legend_of_zelda_breath_of_the_wild_nintendo_switch.webp",
+      "quantity": 1
+    }
+  ]
 }
