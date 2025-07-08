@@ -36,3 +36,81 @@ a {
   text-decoration: none;
 }
 
+/* CSS general de la navbar */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+}
+
+.App {
+  text-align: center;
+}
+
+.content {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 80px auto 20px auto; /* Margen superior para dejar espacio a la navbar */
+}
+
+.loading-message,
+.error-message {
+  padding: 20px;
+  font-size: 1.2em;
+  color: #555;
+}
+
+.error-message {
+  color: red;
+  font-weight: bold;
+}
+
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.product-section {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.product-section h2 {
+  font-size: 1.5em;
+  color: #333;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.product-section p {
+  font-size: 0.95em;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.product-price {
+  font-weight: bold;
+  color: #007bff;
+  font-size: 1.1em;
+  margin-top: 10px;
+}
+
+.product-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin-top: 15px;
+  object-fit: cover; /* Asegura que la imagen no se distorsione */
+  width: 250px; /* Ancho fijo para las imágenes de producto */
+  height: 250px; /* Alto fijo para las imágenes de producto */
+}

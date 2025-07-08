@@ -1,8 +1,10 @@
 import Head from "next/head";
 import Header from "@/components/Header";
-import Main from '../components/main'
+import Main from '../components/Main'
 import Contacts from "@/components/Contacts";
+import Navbar from "@/components/Navbar"
 import Footer from "@/components/Footer";
+
 
 export default function Home() {
   return (
@@ -17,6 +19,7 @@ export default function Home() {
       <Header />
       <Main />
       <Contacts />
+      <Navbar/>
       <Footer />
 
     </>
