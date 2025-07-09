@@ -6,6 +6,8 @@ import { TYPES } from "@/reducer/cartActions";
 import Carrito from "./cart";
 import Card from '../components/card'
 import axios from "axios";
+import Header from "./Header";
+import Main from './Main'
 
 
 const Index = () => {
@@ -103,9 +105,10 @@ const Index = () => {
 
     return (
         <>
-            <h3>Productos</h3>
 
-            {products.map(product => <Card key={product.id} product={product} addToCart={addToCart} />)}
+            <Header />
+
+            <Main products={products} addToCart={addToCart}/>
 
             <Carrito cart={cart} addToCart={addToCart} borrarDelCart={borrarDelCart} vaciarCart={vaciarCart}/>
         </>

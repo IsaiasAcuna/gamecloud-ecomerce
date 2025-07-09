@@ -1,8 +1,7 @@
 import Head from "next/head";
-import Header from "@/components/Header";
-import Main from '../components/main'
 import Contacts from "@/components/Contacts";
 import Footer from "@/components/Footer";
+import Index from "@/components";
 
 export default function Home() {
   return (
@@ -14,8 +13,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Header />
-      <Main />
+      <Index />
       <Contacts />
       <Footer />
 
