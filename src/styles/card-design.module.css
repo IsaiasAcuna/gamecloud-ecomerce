@@ -9,13 +9,13 @@
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    background-color: #ffffff;
+
 
 }
 
 .dataProduct {
     width: 100%;
-    background-color: #ffffff;
-    z-index: 100;
     padding: 5%;
     padding-bottom: 0;
 }

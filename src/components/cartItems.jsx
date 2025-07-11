@@ -1,10 +1,11 @@
 
 import cartItemStyles from '../styles/cartItem-design.module.css'
 import Image from 'next/image'
-import QuantityItem from './quantity-item';
+import QuantityItem from './QuantikyItem'
 
 
-const CardItems = ({item, addToCart, borrarDelCart}) => {
+
+const CardItems = ({item, addToCart, deleteToCart}) => {
     
 
     const {title, price, imagen_url, quantity} = item
@@ -30,7 +31,7 @@ const CardItems = ({item, addToCart, borrarDelCart}) => {
                         })}
                     </h6>
                 
-                    <QuantityItem item={item} addToCart={addToCart} borrarDelCart={borrarDelCart} />
+                    <QuantityItem item={item} addToCart={addToCart} deleteToCart={deleteToCart} />
                 </span>
 
                 

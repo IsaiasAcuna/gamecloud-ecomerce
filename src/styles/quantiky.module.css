@@ -1,0 +1,16 @@
+.cantidadProduct {
+    display: flex;
+    align-items: center;
+}
+
+.containerButtons {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+}
+
+.buttonQuantiky {
+    border: none;
+    background-color: #ffffff00;
+    font-size: 20px;
+}

@@ -1,44 +1,42 @@
 
+import React, { useEffect, useReducer } from "react"; // Asegúrate de que `useState` esté importado
+import axios from "axios";
 import { cartInitialState } from "@/reducer/cartInitialState";
-import { useReducer, useEffect} from "react";
 import { cartReducer } from "@/reducer/cartReducer";
 import { TYPES } from "@/reducer/cartActions";
-import Carrito from "./cart";
-import Card from '../components/card'
-import axios from "axios";
-import Header from "./Header";
-import Main from './Main'
-
+import Navbar from "./Navbar";
+import Main from "./Main";
 
 const Index = () => {
+    const [state, dispatch] = useReducer(cartReducer, cartInitialState);
+    const { products, cart } = state;
 
-    const [state, dispatch] = useReducer(cartReducer, cartInitialState)
-
-    const {products, cart} = state;
-
-    // levantar el server en otra terminal: npm run server
-
+    // Función para leer el estado inicial (productos y carrito)
     const readState = async () => {
 
-        const resProducts = await axios.get("http://localhost:5000/products"),
-            resCart = await axios.get("http://localhost:5000/cart")
+        const resProducts = await axios.get("http://localhost:5000/products");
+        const resCart = await axios.get("http://localhost:5000/cart");
 
-        const productsData = await resProducts.data,
-            cartData = await resCart.data
+        const productsData = resProducts.data;
+        const cartData = resCart.data;
 
-            dispatch({type: TYPES.READ_STATE, payload: {
-                products: productsData,
-                cartItems: cartData
-            }})
+        dispatch({
+            type: TYPES.READ_STATE,
+            payload: {
+            products: productsData,
+            cartItems: cartData,
+            },
+        });
+
         }
-        
-        useEffect(() => {
-            readState()
-        }, [])
 
-        // esta funcion van al boton de "COMPRAR" y el incrementador de los cartItems dentro del cart
+    // Efecto para llamar a readState
+    useEffect(() => {
+        readState();
+    }, []);
 
-        const addToCart = async (product, id) => {
+    // Función para añadir productos al carrito (se usa en el botón "COMPRAR")
+    const addToCart = async (product, id) => {
             
             axios.get(`http://localhost:5000/cart/${id}`)
             
@@ -68,52 +66,52 @@ const Index = () => {
             });
             
         }
+
+    // Función para borrar o disminuir cantidad del carrito
+    const deleteToCart = async (id) => {
+        await axios
+        .get(`http://localhost:5000/cart/${id}`)
+        .then((res) => {
+            if (res.data.quantity > 1) {
+            const newQuantity = res.data.quantity - 1;
+            axios.patch(`http://localhost:5000/cart/${id}`, {
+                quantity: newQuantity,
+            });
+            readState(); // Vuelve a leer el estado para actualizar la UI
+            } else {
+            axios.delete(`http://localhost:5000/cart/${id}`);
+            readState(); // Vuelve a leer el estado para actualizar la UI
+            }
+        });
+    };
+
+    // Función para vaciar completamente el carrito
+    const cleanCart = async () => {
+        // Obtenemos todos los ítems del carrito para borrarlos individualmente
+        const res = await axios.get(`http://localhost:5000/cart`);
+        const deletePromises = res.data.map((item) =>
+        axios.delete(`http://localhost:5000/cart/${item.id}`)
+        );
         
-
-        const borrarDelCart = async (id) => {
-            
-            await axios.get(`http://localhost:5000/cart/${id}`)
-            .then(res => {                
-                if (res.data.quantity > 1) {                    
-                    const newQuantity = res.data.quantity - 1;                    
-                    axios.patch(`http://localhost:5000/cart/${id}`, {
-                        quantity: newQuantity
-                    });
-                    readState()                    
-                }else{
-                    axios.delete(`http://localhost:5000/cart/${id}`)
-                    readState()
-                }                
-            })
-            ;
-            
-        }
-
-        //delete .map al cart multiple
-        const vaciarCart = async () => {
-            await axios.get(`http://localhost:5000/cart`)         
-            .then(res => {   
-            res.data.map((item => 
-                axios.delete(`http://localhost:5000/cart/${item.id}`)
-            ))
-            
-        })
-
-        readState()
-    }
-
+        // Esperamos a que todas las promesas de borrado se completen
+        await Promise.all(deletePromises);
+        
+        readState();
+    };
 
     return (
         <>
 
-            <Header />
+            <Navbar products={products} 
+                cart={cart}
+                addToCart={addToCart}
+                deleteToCart={deleteToCart}
+                cleanCart={cleanCart} />
 
-            <Main products={products} addToCart={addToCart}/>
+            <Main products={products} addToCart={addToCart} />
 
-            <Carrito cart={cart} addToCart={addToCart} borrarDelCart={borrarDelCart} vaciarCart={vaciarCart}/>
         </>
     );
-};
+    };
 
-
-export default Index
+export default Index;

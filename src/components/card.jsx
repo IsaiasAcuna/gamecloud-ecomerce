@@ -1,8 +1,8 @@
-import Button from './button'
-import styles from '../styles/card-design.module.css'
-import Image from 'next/image'
 import { useState } from 'react'
-import ModalProduct from './modal-product'
+import Image from 'next/image'
+import Button from './Button'
+import ModalProduct from './ModalProduct'
+import styles from '../styles/card-design.module.css'
 
 
 const Card = ({product, addToCart}) => {
@@ -11,11 +11,11 @@ const Card = ({product, addToCart}) => {
 
     const [visible, setVisible] = useState(false)
 
-    const toggleModal = () => setVisible(prev => !prev);
+    const toggleModal = (prev) => setVisible(prev => !prev);
 
     return (
     <>
-        <article className={styles.article}>
+        <article className={styles.article} id={product.id}>
             <figure className={styles.imagen}>
                 <Image src={imagen_url} alt="" 
                     layout="intrinsic"

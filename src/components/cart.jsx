@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
-import CardItems from './cartItems';
+import CardItems from './CartItems';
+import Button from './Button';
 
-const Carrito = ( {cart , addToCart, borrarDelCart, vaciarCart}) => {
+const Cart = ( {cart , addToCart, deleteToCart, cleanCart}) => {
   
   const [abierto, setAbierto] = useState(false);
 
@@ -17,41 +18,46 @@ const Carrito = ( {cart , addToCart, borrarDelCart, vaciarCart}) => {
 
 
   const panelStyle = {
-    width: '450px',
-    height: '100vh',
-    backgroundColor: '#f2f2f2',
+    width: 'auto',
+    height: 'auto',
+    backgroundColor: '#fff',
     position: 'fixed',
-    top: 0,
-    right: abierto ? '0' : '-450px',
-    transition: 'right 0.3s ease',
+    top: '10vh',
+    right: '2%',
+    display: abierto ? 'block' : 'none',
+    transition: 'top 0.3s ease',
     padding: '20px',
-    boxShadow: '-2px 0 5px rgba(0,0,0,0.2)',
-    zIndex: 1000,
-    overflowY: 'auto' 
+    boxShadow: '0 2px 5px rgba(0,0,0,0.2)',
+    borderRadius: '0 0 10px 10px',
+    zIndex: '1',
+    overflowY: 'auto',
+    color: 'black'
   };
 
   const botonStyle = {
-    position: 'fixed',
-    top: '20px',
-    right: '20px',
-    padding: '10px 20px',
-    backgroundColor: '#956',
+    backgroundColor: '#ffffff00',
     color: 'white',
     border: 'none',
     cursor: 'pointer',
-    zIndex: 1100
+    zIndex: 1100,
+    fontSize: '35px',
+    padding: '10px 20px',
+    display: "flex",
+    alignItems: "center",
   };
 
   const contadorStyle = {
-    position: 'absolute',
-    top: '-8px',
-    right: '-8px',
+    
     backgroundColor: 'red',
     color: 'white',
     borderRadius: '50%',
     padding: '4px 8px',
     fontSize: '12px'
   };
+
+  const totalStyle = {
+    margin: '2% 0',
+  }
 
   return (
     <>
@@ -63,18 +69,20 @@ const Carrito = ( {cart , addToCart, borrarDelCart, vaciarCart}) => {
       </button>
 
       <div style={panelStyle}>
-        <h2>Tu Carrito</h2>
-        
 
-        {cart.map(item => ( <CardItems item={item} addToCart={addToCart} borrarDelCart={borrarDelCart} />))}
+        <div>
+        {cart.map(item => ( <CardItems item={item} addToCart={addToCart} deleteToCart={deleteToCart} />))}
 
-        <h3>TOTAL: ${(priceTotal).toLocaleString('es-AR', {
+        </div>
+
+
+        <h3 style={totalStyle}>TOTAL: ${(priceTotal).toLocaleString('es-AR', {
                                 minimumFractionDigits: 2,
                                 maximumFractionDigits: 2
                             })} 
         </h3>
 
-        <button onClick={() => vaciarCart()}>Limpiar Carrito</button>
+        <Button onClick={() => cleanCart()} texto={"Limpiar Carrito"} />
 
       </div>
     </>
@@ -83,4 +91,4 @@ const Carrito = ( {cart , addToCart, borrarDelCart, vaciarCart}) => {
 
 // 
 
-export default Carrito;
+export default Cart;

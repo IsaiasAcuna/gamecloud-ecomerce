@@ -1,4 +1,4 @@
-import Card from "./card"
+import Card from "./Card"
 import styles from '../styles/Main.module.css'
 
 
