@@ -1,32 +1,36 @@
 
-import React, { useEffect, useReducer } from "react"; // Asegúrate de que `useState` esté importado
+import React, { useEffect, useReducer } from "react";
 import axios from "axios";
 import { cartInitialState } from "@/reducer/cartInitialState";
 import { cartReducer } from "@/reducer/cartReducer";
 import { TYPES } from "@/reducer/cartActions";
-import Navbar from "./Navbar";
-import Main from "./Main";
+import Navbar from "./navbar";
+import Main from "./main-component";
 
 const Index = () => {
     const [state, dispatch] = useReducer(cartReducer, cartInitialState);
     const { products, cart } = state;
 
+    
+
     // Función para leer el estado inicial (productos y carrito)
     const readState = async () => {
+        try {
+            const [resProducts, resCart] = await Promise.all([
+                axios.get("http://localhost:5000/products"),
+                axios.get("http://localhost:5000/cart")
+            ]);
 
-        const resProducts = await axios.get("http://localhost:5000/products");
-        const resCart = await axios.get("http://localhost:5000/cart");
-
-        const productsData = resProducts.data;
-        const cartData = resCart.data;
-
-        dispatch({
-            type: TYPES.READ_STATE,
-            payload: {
-            products: productsData,
-            cartItems: cartData,
-            },
-        });
+            dispatch({
+                type: TYPES.READ_STATE,
+                payload: {
+                    products: resProducts.data,
+                    cartItems: resCart.data,
+                },
+            });
+        } catch (error) {
+            console.error("Error al leer estado:", error.message);
+        }
 
         }
 

@@ -14,8 +14,8 @@ const ModalProduct = ({ product, addToCart, toggleModal }) => {
                 <figure className={styles.imagen}>
                     <Image src={imagen_url} alt="" 
                         layout="intrinsic"
-                        width={250}
-                        height={300}/>
+                        width={170}
+                        height={200}/>
 
                 </figure>
                 <div className={styles.dataModal}>
@@ -27,7 +27,7 @@ const ModalProduct = ({ product, addToCart, toggleModal }) => {
                             })}</h6>
 
 
-                    <Button onClick={() => addToCart(product, id)} texto={"AGREGAR AL CARRITO"} />
+                    <Button onClick={() => {addToCart(product, id), toggleModal(false)}} texto={"AGREGAR AL CARRITO"} />
 
                     <button className={styles.closeModal} onClick={() => toggleModal()}> x </button>
 

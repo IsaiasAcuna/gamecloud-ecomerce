@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "server": "npx json-server --port 5000 --watch src/db/db.json"
+    "server": "npx json-server --host 0.0.0.0 --port 5000 --watch src/db/db.json"
     
   },
   "dependencies": {

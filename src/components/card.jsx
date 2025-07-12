@@ -5,7 +5,7 @@ import ModalProduct from './ModalProduct'
 import styles from '../styles/card-design.module.css'
 
 
-const Card = ({product, addToCart}) => {
+const Card = ({product, addToCart }) => {
 
     const {title, category, price, imagen_url} = product
 
@@ -17,10 +17,12 @@ const Card = ({product, addToCart}) => {
     <>
         <article className={styles.article} id={product.id}>
             <figure className={styles.imagen}>
-                <Image src={imagen_url} alt="" 
-                    layout="intrinsic"
-                    width={150}
-                    height={300}/>
+                <Image src={imagen_url} alt={title} 
+                    
+                    width={170}
+                    height={200}
+                    priority
+                />
 
             </figure>
             <div className={styles.dataProduct}>

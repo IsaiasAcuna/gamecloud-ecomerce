@@ -6,9 +6,6 @@ import Cart from './Cart';
 const Navbar = ({ products, cart , addToCart, deleteToCart, cleanCart }) => {
     const [searchTerm, setSearchTerm] = useState('');
 
-    console.log(products);
-    
-
     const handleSearch = () => {
         const foundProduct = products.find(
         (product) => product.title.toLowerCase() === searchTerm.toLowerCase()
@@ -81,6 +78,7 @@ const Navbar = ({ products, cart , addToCart, deleteToCart, cleanCart }) => {
                 top: 0;
                 display: flex;
                 align-items: center;
+                z-index: 100;
                 
             }
                 .navbar {
@@ -176,6 +174,14 @@ const Navbar = ({ products, cart , addToCart, deleteToCart, cleanCart }) => {
             .search-button:hover {
             background-color: darkred;
             }
+
+            @media only screen and (max-width: 480px) {
+                /* Estilos para celulares */
+
+                .search-bar input {
+                    width: 100px;
+            }
+}
         `}</style>
         
 

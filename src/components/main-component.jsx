@@ -1,7 +1,6 @@
 import Card from "./Card"
 import styles from '../styles/Main.module.css'
 
-
 const Main = ( {products, addToCart} ) => {
 
     const productosPlaystation = products.filter((product) => product.platafrom.includes("PLAYSTATION"));
@@ -15,7 +14,12 @@ const Main = ( {products, addToCart} ) => {
                 <h2 className={styles.titleSection}>PLAYSTATION</h2>
                     <section className={styles.section}>
 
-                        {productosPlaystation.map(product => <Card key={product.id} product={product} addToCart={addToCart} />)}
+                        {productosPlaystation.map(product => 
+                                <Card key={product.id} 
+                                    product={product} 
+                                    addToCart={addToCart}
+                                />
+                        )}
 
                     </section>
 
