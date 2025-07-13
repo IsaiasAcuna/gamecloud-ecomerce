@@ -50,12 +50,15 @@
 @media only screen and (max-width: 480px) {
   /* Estilos para celulares */
 
-  .article {
+.article {
     width: 100%;
     border: none;
-  }
+    }
 
+    .titleCard, .priceCard {
 
+    font-size: 20px;
+}
 }
 
 

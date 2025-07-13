@@ -4,14 +4,14 @@ import axios from "axios";
 import { cartInitialState } from "@/reducer/cartInitialState";
 import { cartReducer } from "@/reducer/cartReducer";
 import { TYPES } from "@/reducer/cartActions";
-import Navbar from "./navbar";
-import Main from "./main-component";
+import Navbar from "./Navbar";
+import Main from "./Main-component";
 
 const Index = () => {
     const [state, dispatch] = useReducer(cartReducer, cartInitialState);
     const { products, cart } = state;
 
-    
+    //HACER NPM RUN DEV Y NPM RUN SERVER
 
     // Función para leer el estado inicial (productos y carrito)
     const readState = async () => {

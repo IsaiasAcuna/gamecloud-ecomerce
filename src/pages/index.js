@@ -1,5 +1,5 @@
 import Head from "next/head";
-import Index from "../components/index";
+import Index from "../components/Index";
 import Contacts from "../components/Contacts";
 import Footer from "../components/Footer";
 

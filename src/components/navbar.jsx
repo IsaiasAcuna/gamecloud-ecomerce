@@ -33,9 +33,7 @@ const Navbar = ({ products, cart , addToCart, deleteToCart, cleanCart }) => {
             <nav className="navbar">
             <div className="navbar-left">
             <div className="navbar-logo">
-            {/* **IMPORTANTE:** Reemplaza '/path/to/your/logo.png' con la ruta real de tu logo.
-                Por ejemplo, si tu logo está en 'public/logo.png', usa '/logo.png' */}
-            <Image src="/GameCloud_logo.png" width={80} height={80} alt="GameCloud - Logo de la pagina"/>
+            <Image src="/GameCloud_logo.png" width={60} height={50} alt="GameCloud - Logo de la pagina"/>
             </div>
             </div>
             <div className="navbar-center">
@@ -73,7 +71,8 @@ const Navbar = ({ products, cart , addToCart, deleteToCart, cleanCart }) => {
             .header {
                 width: 100%;
                 height: 10vh;
-                background-color: #171717;
+                // background-color: #171717;
+                background-color: #f80e0eea;
                 position: sticky;
                 top: 0;
                 display: flex;
@@ -87,8 +86,6 @@ const Navbar = ({ products, cart , addToCart, deleteToCart, cleanCart }) => {
                 align-items: center;
                 padding: 10px 0;
                 width: 85%;
-                margin: 0 auto;
-                color: white;
                 box-sizing: border-box;
                 z-index: 100;
                 }
@@ -100,14 +97,15 @@ const Navbar = ({ products, cart , addToCart, deleteToCart, cleanCart }) => {
 
             .navbar-logo {
             margin-right: 20px;
+            margin-left:6px;
+            margin-top:10px;
+            margin-bottom:7px;
             }
 
             .navbar-logo img {
                 width: 10px;
-                height: auto; {/* Ajuste de tamaño del logo */}
             }
-
-            {/* Estilos para enlaces de navegación*/}
+            
             .navbar-center ul {
             list-style: none;
             margin: 0;
