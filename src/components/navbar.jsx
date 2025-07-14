@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { FaSearch } from 'react-icons/fa'
 import Image from 'next/image';
-import Cart from './cart';
+import Cart from './Cart';
 
 const Navbar = ({ products, cart , addToCart, deleteToCart, cleanCart }) => {
     const [searchTerm, setSearchTerm] = useState('');

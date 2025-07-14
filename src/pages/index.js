@@ -1,7 +1,7 @@
 import Head from "next/head";
-import Index from "../components/index.jsx";
-import Contacts from "../components/contacts.jsx";
-import Footer from "../components/footer-component.jsx";
+import Index from "../components/MainHome.jsx";
+import Contacts from "../components/Contacts.jsx";
+import Footer from "../components/Footer.jsx";
 
 export default function Home() {
   return (
