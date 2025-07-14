@@ -1,6 +1,6 @@
 import styles from '../styles/quantiky.module.css'
 
-const QuantityItem = ({ item , addToCart, deleteToCart }) => {
+const QuantikyItem = ({ item , addToCart, deleteToCart }) => {
 
   const { id, quantity } = item
 
@@ -19,4 +19,4 @@ const QuantityItem = ({ item , addToCart, deleteToCart }) => {
   )
 }
 
-export default QuantityItem
+export default QuantikyItem
