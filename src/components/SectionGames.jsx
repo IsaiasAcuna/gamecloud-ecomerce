@@ -1,8 +1,9 @@
-import Card from "./Card"
-import styles from '../styles/Main.module.css'
-import SimpleSlider from "./Carrousel";
 
-const SectionGames = ( {products, addToCart} ) => {
+import styles from '../styles/Main.module.css'
+import Card from './Card';
+import Carrousel from './Carrousel';
+
+function SectionGames({ products, addToCart }) {
 
     const productosPlaystation = products.filter((product) => product.platafrom.includes("PLAYSTATION"));
     const productosXbox = products.filter((product) => product.platafrom.includes("XBOX"));
@@ -13,37 +14,35 @@ const SectionGames = ( {products, addToCart} ) => {
 
             <main>
                 <h2 className={styles.titleSection}>PLAYSTATION</h2>
-                    <section className={styles.section}>
+                <section className={styles.section}>
 
-                        {productosPlaystation.map(product => 
-                                <Card key={product.id} 
-                                    product={product} 
-                                    addToCart={addToCart}
-                                />
-                        )}
+                    {productosPlaystation.map(product => <Card key={product.id}
+                        product={product}
+                        addToCart={addToCart} />
+                    )}
 
-                    </section>
+                </section>
 
                 <h2 className={styles.titleSection}>XBOX</h2>
-                    <section className={styles.section}>
+                <section className={styles.section}>
 
-                        {productosXbox.map(product => <Card key={product.id} product={product} addToCart={addToCart} />)}
+                    {productosXbox.map(product => <Card key={product.id} product={product} addToCart={addToCart} />)}
 
-                    </section>
+                </section>
 
                 <h2 className={styles.titleSection}>NINTENDO</h2>
-                    <section className={styles.section}>
+                <section className={styles.section}>
 
-                        {productosNintendo.map(product => <Card key={product.id} product={product} addToCart={addToCart} />)}
+                    {productosNintendo.map(product => <Card key={product.id} product={product} addToCart={addToCart} />)}
 
-                    </section>
+                </section>
 
-                <SimpleSlider/>
+                <Carrousel />
 
             </main>
 
         </>
-    )
+    );
 }
 
 export default SectionGames

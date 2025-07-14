@@ -5,7 +5,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
 
-function SimpleSlider() {
+function Carrousel() {
   const settings = {
     dots: true,
     infinite: true,
@@ -97,4 +97,4 @@ function SimpleSlider() {
   );
 }
 
-export default SimpleSlider;
+export default Carrousel;
