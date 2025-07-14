@@ -20,8 +20,3 @@ const QuantityItem = ({ item , addToCart, deleteToCart }) => {
 }
 
 export default QuantityItem
-
-// onClick={() => deleteFromCart(id, false)}
-// onClick={() => borrarDelCart(id)}
-
-// mira pelotudo te quedaste en poner la cantidadd e los items, arreglar bien el diseño de itemcart y arreglar el cartinicialstate...... dale q podes hdp

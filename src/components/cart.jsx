@@ -16,49 +16,6 @@ const Cart = ({ cart, addToCart, deleteToCart, cleanCart }) => {
         }
     }, [cart]);
 
-
-    const panelStyle = {
-        width: 'auto',
-        height: 'auto',
-        backgroundColor: '#fff',
-        position: 'fixed',
-        top: '10vh',
-        right: '2%',
-        display: abierto ? 'block' : 'none',
-        transition: 'top 0.3s ease',
-        padding: '20px',
-        boxShadow: '0 2px 5px rgba(0,0,0,0.2)',
-        borderRadius: '0 0 10px 10px',
-        zIndex: '1',
-        overflowY: 'auto',
-        color: 'black'
-    };
-
-    const botonStyle = {
-        backgroundColor: '#ffffff00',
-        color: 'white',
-        border: 'none',
-        cursor: 'pointer',
-        zIndex: 1100,
-        fontSize: '35px',
-        padding: '10px 20px',
-        display: "flex",
-        alignItems: "center",
-    };
-
-    const contadorStyle = {
-
-        backgroundColor: 'red',
-        color: 'white',
-        borderRadius: '50%',
-        padding: '4px 8px',
-        fontSize: '12px'
-    };
-
-    const totalStyle = {
-        margin: '2% 0',
-    }
-
     return (
         <>
             <button className="botonStyle" onClick={toggleCarrito}>
