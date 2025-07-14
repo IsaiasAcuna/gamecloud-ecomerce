@@ -2,7 +2,7 @@ import Card from "./Card"
 import styles from '../styles/Main.module.css'
 import SimpleSlider from "./Carrousel";
 
-const Main = ( {products, addToCart} ) => {
+const SectionGames = ( {products, addToCart} ) => {
 
     const productosPlaystation = products.filter((product) => product.platafrom.includes("PLAYSTATION"));
     const productosXbox = products.filter((product) => product.platafrom.includes("XBOX"));
@@ -46,4 +46,4 @@ const Main = ( {products, addToCart} ) => {
     )
 }
 
-export default Main
+export default SectionGames

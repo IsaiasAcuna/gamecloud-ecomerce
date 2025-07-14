@@ -1,7 +1,7 @@
 import Head from "next/head";
-import Index from "../components/MainHome.jsx";
-import Contacts from "../components/Contacts.jsx";
-import Footer from "../components/Footer.jsx";
+import MainHome from "../components/MainHome.jsx";
+import Contacts from "@/components/Contacts.jsx";
+import Footer from "@/components/Footer.jsx";
 
 export default function Home() {
   return (
@@ -13,8 +13,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      
-
+      <MainHome />
+      <Contacts />
+      <Footer />
     </>
   );
 }

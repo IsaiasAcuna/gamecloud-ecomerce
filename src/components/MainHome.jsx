@@ -5,9 +5,9 @@ import { cartInitialState } from "@/reducer/cartInitialState";
 import { cartReducer } from "@/reducer/cartReducer";
 import { TYPES } from "@/reducer/cartActions";
 import Navbar from "./Navbar";
-import Main from "./SectionGames";
+import SectionGames from "./SectionGames";
 
-const Index = () => {
+const MainHome = () => {
     const [state, dispatch] = useReducer(cartReducer, cartInitialState);
     const { products, cart } = state;
 
@@ -112,10 +112,10 @@ const Index = () => {
                 deleteToCart={deleteToCart}
                 cleanCart={cleanCart} />
 
-            <Main products={products} addToCart={addToCart} />
+            <SectionGames products={products} addToCart={addToCart} />
 
         </>
     );
     };
 
-export default Index;
+export default MainHome;
