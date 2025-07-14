@@ -4,8 +4,8 @@ import axios from "axios";
 import { cartInitialState } from "@/reducer/cartInitialState";
 import { cartReducer } from "@/reducer/cartReducer";
 import { TYPES } from "@/reducer/cartActions";
-import Navbar from "./Navbar";
-import Main from "./Main-component";
+import Navbar from "./navbar";
+import Main from "./main-component";
 
 const Index = () => {
     const [state, dispatch] = useReducer(cartReducer, cartInitialState);

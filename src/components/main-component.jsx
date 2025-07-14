@@ -1,5 +1,6 @@
 import Card from "./Card"
 import styles from '../styles/Main.module.css'
+import SimpleSlider from "./carrousel";
 
 const Main = ( {products, addToCart} ) => {
 
@@ -36,6 +37,8 @@ const Main = ( {products, addToCart} ) => {
                         {productosNintendo.map(product => <Card key={product.id} product={product} addToCart={addToCart} />)}
 
                     </section>
+
+                <SimpleSlider/>
 
             </main>
 

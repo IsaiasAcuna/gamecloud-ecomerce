@@ -128,7 +128,7 @@ const Cart = ({ cart, addToCart, deleteToCart, cleanCart }) => {
                 }
 
                 .contadorStyle {
-                    background-color: red;
+                    background-color: black;
                     color: white;
                     border-radius: 50%;
                     padding: 4px 8px;

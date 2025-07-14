@@ -85,6 +85,7 @@ const Navbar = ({ products, cart , addToCart, deleteToCart, cleanCart }) => {
                 justify-content: space-between;
                 align-items: center;
                 padding: 10px 0;
+                margin: 0 auto;
                 width: 85%;
                 box-sizing: border-box;
                 z-index: 100;
@@ -157,7 +158,7 @@ const Navbar = ({ products, cart , addToCart, deleteToCart, cleanCart }) => {
             }
 
             .search-button {
-            background-color: red;
+            background-color: black;
             border: none;
             padding: 8px 12px;
             cursor: pointer;
