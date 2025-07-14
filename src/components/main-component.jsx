@@ -1,4 +1,4 @@
-import Card from "./Card"
+import Card from "./card"
 import styles from '../styles/Main.module.css'
 import SimpleSlider from "./carrousel";
 

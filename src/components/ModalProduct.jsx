@@ -1,6 +1,6 @@
 import styles from '../styles/modal-product.module.css';
 import Image from 'next/image';
-import Button from './Button';
+import Button from './button';
 
 
 const ModalProduct = ({ product, addToCart, toggleModal }) => {

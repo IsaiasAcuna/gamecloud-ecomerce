@@ -1,7 +1,7 @@
 
 import cartItemStyles from '../styles/cartItem-design.module.css'
 import Image from 'next/image'
-import QuantityItem from './QuantikyItem'
+import QuantityItem from './quantikyItem'
 
 
 

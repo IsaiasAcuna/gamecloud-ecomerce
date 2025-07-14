@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import CardItems from './CartItems';
-import Button from './Button';
+import CardItems from './cartItems';
+import Button from './button';
 
 const Cart = ({ cart, addToCart, deleteToCart, cleanCart }) => {
 

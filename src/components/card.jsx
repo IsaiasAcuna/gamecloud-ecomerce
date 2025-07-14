@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import Image from 'next/image'
-import Button from './Button'
-import ModalProduct from './ModalProduct'
+import Button from './button'
+import ModalProduct from './modalProduct'
 import styles from '../styles/card-design.module.css'
 
 

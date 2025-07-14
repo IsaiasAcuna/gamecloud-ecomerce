@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Index from "../components/index";
-import Contacts from "../components/Contacts";
+import Contacts from "../components/contacts";
 import Footer from "../components/footer-component";
 
 export default function Home() {
