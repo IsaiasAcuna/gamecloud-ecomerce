@@ -112,6 +112,12 @@ const MainHome = () => {
                 deleteToCart={deleteToCart}
                 cleanCart={cleanCart} />
 
+                <section style={{ textAlign: 'center', margin: '5em 0'}}>
+                    <h1 style={{ fontSize: '3.5em'}}>GAMECLOUD STORE</h1>
+                    <p style={{ fontSize: '1.4em', marginTop: '1%'}}>La tienda de videojuegos más grande de Argentina</p>
+
+                </section>
+
             <SectionGames products={products} addToCart={addToCart} />
 
         </>

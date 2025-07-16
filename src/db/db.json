@@ -79,6 +79,22 @@
       "price": 94999,
       "imagen_url": "https://raw.githubusercontent.com/IsaiasAcuna/imagenes-app/master/images/super-mario-3d-world-nintendo-switch.jpeg",
       "platafrom": "NINTENDO"
+    },
+    {
+      "id": "10",
+      "title": "Cyberpunk 2077",
+      "category": "Mundo Abierto",
+      "price": 74999,
+      "imagen_url": "https://raw.githubusercontent.com/IsaiasAcuna/imagenes-app/master/images/cyberpunk-2077-xbox-series.jpg",
+      "platafrom": "XBOX"
+    },
+    {
+      "id": "11",
+      "title": "Animal Croosing",
+      "category": "Simulación de vida",
+      "price": 104999,
+      "imagen_url": "https://raw.githubusercontent.com/IsaiasAcuna/imagenes-app/master/images/animal-crossing-new-horizons-switch.jpg",
+      "platafrom": "NINTENDO"
     }
   ],
   "cart": []

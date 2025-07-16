@@ -1,5 +1,5 @@
 
-import styles from '../styles/Main.module.css'
+import styles from '../styles/SectionGames.module.css'
 import Card from './Card';
 import Carrousel from './Carrousel';
 
@@ -13,6 +13,9 @@ function SectionGames({ products, addToCart }) {
         <>
 
             <main>
+                
+
+
                 <h2 className={styles.titleSection}>PLAYSTATION</h2>
                 <section className={styles.section}>
 
